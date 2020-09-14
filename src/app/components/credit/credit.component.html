@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>Расчёт кредита</h2>
+
+<mat-dialog-content class="mat-typography">
+  <span class="slider-block">
+
+    <mat-card >
+      <mat-card-content>
+        <h2>Первоначальный взнос</h2>
+        <h2>₽{{firstPay.value * price/100 }} </h2>
+        <mat-slider
+            [min]="firstPay.min" 
+            [max]="firstPay.max" 
+            [step]="firstPay.step" 
+            [(value)]="firstPay.value"
+            (change) = "onChangeFirstPay()"
+          >
+        </mat-slider>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card >
+      <mat-card-content>
+        <h2>Готов платить в месяц</h2>
+        <h2>₽{{perMonthPay.value}} </h2>
+        <mat-slider
+            [min]="perMonthPay.min" 
+            [max]="perMonthPay.max" 
+            [step]="perMonthPay.step" 
+            [(value)]="perMonthPay.value"
+            (change) = "onChangePerMonthPay()"
+          >
+        </mat-slider>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card >
+      <mat-card-content>
+        <h2>Срок кредита</h2>
+        <h2>{{months.value/12}} год / лет</h2>
+        <mat-slider
+            [min]="months.min" 
+            [max]="months.max" 
+            [step]="months.step" 
+            [(value)]="months.value"
+            (change) = "onChangeMonths()"
+          >
+        </mat-slider>
+      </mat-card-content>
+    </mat-card>
+
+  </span>
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="false">Отправить заявку</button> 
+</mat-dialog-actions>
+<br>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="end">
+  Возникли вопросы? <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Получить консультацию</button>
+</mat-dialog-actions>

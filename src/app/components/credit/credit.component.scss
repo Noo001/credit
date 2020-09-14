@@ -1,0 +1,27 @@
+button{
+  margin: 10px;
+}
+
+.slider-block{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  mat-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 8px;
+    width: 250px;
+    background-color: rgba(250, 235, 215, 0.26);
+  }
+
+  h2{
+    white-space: pre-wrap;
+  }
+
+  mat-slider{
+    width: 250px;
+    margin: 0;
+    padding: 0;
+  }
+}

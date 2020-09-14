@@ -1,0 +1,17 @@
+span{
+  display: flex;
+  width: 15rem;
+  height: 12rem;
+  background: rgb(247, 254, 255); 
+  border: 3px solid rgb(240, 249, 255); 
+  border-radius: 10px; 
+  margin: 1rem;
+
+  align-items: flex-end;
+}
+div{
+  display: flex;
+  color: rgb(75, 63, 77);
+  text-align: left;
+  text-shadow: 1px 1px 1px rgb(197, 197, 197);
+}
