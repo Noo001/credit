@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { ICar } from 'src/app/data.service';
+import { ICar } from 'src/app/services/data.service';
 
 interface Slider{
   min: number;

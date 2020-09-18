@@ -6,19 +6,20 @@ import { AppComponent } from './app.component';
 import { CarComponent } from './components/car/car.component';
 import { CreditComponent } from './components/credit/credit.component';
 import { SuccessComponent } from './components/success/success.component';
-import { DataService } from './data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatCardModule} from '@angular/material/card';
+import { CarListComponent } from './components/car-list/car-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarComponent,
     CreditComponent,
-    SuccessComponent
+    SuccessComponent,
+    CarListComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,6 @@ import {MatCardModule} from '@angular/material/card';
     MatCardModule
   ],
   providers: [
-    DataService,
     { provide: MatDialogRef, useValue: {} },
     //{ provide: MAT_DIALOG_DATA, useValue: [] }
   ],

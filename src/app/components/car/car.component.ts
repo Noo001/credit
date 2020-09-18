@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ICar } from 'src/app/data.service';
+import { ICar } from 'src/app/services/data.service';
 
 @Component({
   selector: 'car-block',
