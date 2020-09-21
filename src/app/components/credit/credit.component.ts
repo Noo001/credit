@@ -52,11 +52,7 @@ export class CreditComponent {
     else if (this.months.value < 12) this.months.value = 12;
     else if (this.months.value > this.months.max) this.months.value = this.months.max;
     if (this.months.value/12 != Math.floor(this.months.value/12)) this.months.value = (Math.floor(this.months.value/12) + 1)*12;
-
-    this.dataService.setCrPlan = this.months.value < 25 ? 'Оптимальный':this.months.value > 119 ? 'Кабала' : 'Норма';
-    this.monthPlural = 
-      ((this.months.value%10 == 2 || this.months.value%10 == 3 || this.months.value%10 == 4) && (this.months.value%100 !=12 || this.months.value%100 !=13 ||  this.months.value%100 !=14) ) 
-      ? 'месяца' : (this.months.value%10 == 1 && this.months.value%100 != 11) ? 'месяц' : 'месяцев';
+    this.calcParams();
   }
 
   calcPerMonthPay(): void{
@@ -66,6 +62,13 @@ export class CreditComponent {
     if (perMonthPayMax/1000 != Math.floor(perMonthPayMax/1000)) perMonthPayMax = (Math.floor(perMonthPayMax/1000) + 1) *1000;
     this.perMonthPay = {min: perMonthPayMin, max: perMonthPayMax, value: this.perMonthPay? this.perMonthPay.value : perMonthPayMin, step: 1000};
     this.validatePerMonthPayValue();
+  }
+
+  calcParams(){
+    this.dataService.setCrPlan = this.months.value < 25 ? 'Оптимальный':this.months.value > 119 ? 'Кабала' : 'Норма';
+    this.monthPlural = 
+      ((this.months.value%10 == 2 || this.months.value%10 == 3 || this.months.value%10 == 4) && (this.months.value%100 !=12 || this.months.value%100 !=13 ||  this.months.value%100 !=14) ) 
+      ? 'месяца' : (this.months.value%10 == 1 && this.months.value%100 != 11) ? 'месяц' : 'месяцев';
   }
 
   validatePerMonthPayValue(){
@@ -88,6 +91,7 @@ export class CreditComponent {
   onChangeMonths(){
     this.calcPerMonthPayValue();
     this.validatePerMonthPayValue();
+    this.calcParams();
   }
 
   calcPerMonthPayValue(){
