@@ -1,12 +1,13 @@
 <h2 mat-dialog-title>Расчёт кредита</h2>
+<p >Автомобиль: {{car.name}}</p>
 
-<mat-dialog-content class="mat-typography">
+<mat-dialog-content class="mat-typography" >
   <span class="slider-block">
 
     <mat-card >
       <mat-card-content>
         <h2>Первоначальный взнос</h2>
-        <h2>₽{{firstPay.value * price/100 }} ({{firstPay.value }}%) </h2>
+        <h2>₽{{firstPay.value * car.price/100 }} ({{firstPay.value }}%) </h2>
         <mat-slider
             [min]="firstPay.min" 
             [max]="firstPay.max" 
@@ -36,7 +37,7 @@
     <mat-card >
       <mat-card-content>
         <h2>Срок кредита</h2>
-        <h2>{{months.value/12}} год / лет</h2>
+        <h2>{{months.value}} {{monthPlural}}</h2>
         <mat-slider
             [min]="months.min" 
             [max]="months.max" 

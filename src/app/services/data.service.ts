@@ -27,9 +27,18 @@ class Data{
 })
 export class DataService {
   private data: Data = new Data;
+  private crPlan: string = '';
   constructor() { }
 
   get getData(): ICar[]{
     return this.data.cars;
+  }
+
+  get getCrPlan(): string{
+    return this.crPlan;
+  }
+
+  set setCrPlan(plan: string) {
+    this.crPlan = plan;
   }
 }
