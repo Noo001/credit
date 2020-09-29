@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DataService, ICar } from 'src/app/services/data.service';
 import { CreditComponent } from '../credit/credit.component';
@@ -10,7 +10,6 @@ import { SuccessComponent } from '../success/success.component';
   styleUrls: ['./car-list.component.scss']
 })
 export class CarListComponent {
-  @ViewChild(SuccessComponent, {static: false}) private successComponent: SuccessComponent;
 
   cars: ICar[];
 
